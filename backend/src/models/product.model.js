@@ -2,7 +2,7 @@ const camelize = require('camelize');
 const connection = require('./connection');
 
 const findAll = async () => {
-  const [[products]] = await connection.execute('SELECT * FROM products');
+  const [products] = await connection.execute('SELECT * FROM products ORDER BY id');
   return camelize(products);
 };
 
