@@ -18,7 +18,10 @@ const productsFromServiceSuccessful = {
   data: productsFromModel,
 };
 
+const productFromModelSuccessful = { id: 1, name: 'Martelo de Thor' };
+
 module.exports = {
   productsFromModel,
   productsFromServiceSuccessful,
+  productFromModelSuccessful,
 };
