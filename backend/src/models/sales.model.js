@@ -7,7 +7,8 @@ const findAll = async () => {
   SELECT
     s.date,
     sp.product_id,
-    sp.quantity
+    sp.quantity,
+    sp.sale_id
   FROM sales s
   INNER JOIN sales_products sp
   ON
