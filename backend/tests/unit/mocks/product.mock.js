@@ -27,10 +27,13 @@ const productFromServiceSuccessful = {
 
 const productFromServiceNotFound = { status: 404, data: { message: 'Product not found' } };
 
+const productIdFromDB = { insertId: 42 };
+
 module.exports = {
   productsFromModel,
   productsFromServiceSuccessful,
   productFromServiceSuccessful,
   productFromModel,
   productFromServiceNotFound,
+  productIdFromDB,
 };
