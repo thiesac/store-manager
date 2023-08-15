@@ -25,9 +25,12 @@ const productFromServiceSuccessful = {
   data: productFromModel,
 };
 
+const productFromServiceNotFound = { status: 404, data: { message: 'Product not found' } };
+
 module.exports = {
   productsFromModel,
   productsFromServiceSuccessful,
   productFromServiceSuccessful,
   productFromModel,
+  productFromServiceNotFound,
 };

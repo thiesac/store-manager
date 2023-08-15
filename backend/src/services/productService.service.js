@@ -2,9 +2,6 @@ const { productModel } = require('../models');
 
 const findAll = async () => {
   const products = await productModel.findAll();
-  if (!products || products.length === 0) {
-    return { status: 404, data: { message: 'There are no products' } };
-  }
   return { status: 200, data: products };
 };
 
