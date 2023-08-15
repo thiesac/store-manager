@@ -18,10 +18,16 @@ const productsFromServiceSuccessful = {
   data: productsFromModel,
 };
 
-const productFromModelSuccessful = { id: 1, name: 'Martelo de Thor' };
+const productFromModel = { id: 1, name: 'Martelo de Thor' };
+
+const productFromServiceSuccessful = {
+  status: 200,
+  data: productFromModel,
+};
 
 module.exports = {
   productsFromModel,
   productsFromServiceSuccessful,
-  productFromModelSuccessful,
+  productFromServiceSuccessful,
+  productFromModel,
 };
