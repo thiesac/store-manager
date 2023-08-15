@@ -11,16 +11,6 @@ const findById = async (productId) => {
   return camelize(product);
 };
 
-// const insertSale = async (product) => {
-//   const { name } = product;
-//    const query = `
-//     INSERT INTO products (name)
-//     VALUES (?)
-//   `;
-//   const [{ insertId }] = await connection.execute(query, [name]);
-//   return insertId;
-// };
-
 const insertSale = async (name) => {
   const query = `
     INSERT INTO products (name)
