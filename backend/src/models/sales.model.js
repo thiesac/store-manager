@@ -16,8 +16,8 @@ const findAll = async () => {
   return camelize(sales);
 };
 
-const findById = async (salesId) => {
-  const [sales] = await connection
+const findById = async (saleId) => {
+  const [sale] = await connection
     .execute(`
   SELECT
     s.date,
@@ -28,8 +28,8 @@ const findById = async (salesId) => {
   ON
     s.id = sp.sale_id
   WHERE id = ?
-  `, [salesId]);
-  return camelize(sales);
+  `, [saleId]);
+  return camelize(sale);
 };
 
 module.exports = {
