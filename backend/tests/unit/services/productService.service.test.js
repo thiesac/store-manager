@@ -4,8 +4,8 @@ const { productModel } = require('../../../src/models');
 const { productService } = require('../../../src/services');
 const { productFromServiceNotFound } = require('../mocks/product.mock');
 
-describe('Realizando testes - PRODUCT SERVICE', function () {
-  it('Não recupera produto caso não exista', async function () {
+describe('Performing tests - PRODUCT SERVICE', function () {
+  it('Don\'t get product in case it doesn\'t exist', async function () {
     sinon.stub(productModel, 'findById').resolves(undefined);
     const productId = 5;
 

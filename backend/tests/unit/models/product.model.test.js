@@ -1,16 +1,16 @@
-// const { expect } = require('chai');
-// const sinon = require('sinon');
-// const connection = require('../../../src/models/connection');
-// const { productModel } = require('../../../src/models');
-// const { productIdFromDB } = require('../mocks/product.mock');
+const sinon = require('sinon');
+const { expect } = require('chai');
+const productModel = require('./models/product.model');
 
-// describe('Realizando testes - PRODUCT MODEL:', function () {
-//   it('Inserindo produto com sucesso', async function () {
-//     sinon.stub(connection, 'execute').resolves(productIdFromDB);
+describe('Product Model', () => {
+  it('should call connection.execute with the correct arguments', async () => {
+    const executeSpy = sinon.spy(productModel.connection, 'execute');
+    const productId = 123;
 
-//     const inputData = { name: 'ProductZ' };
-//     const insertId = await productModel.insert(inputData);
-    
-//     expect(insertId).to.be.a('number');
-//   });
-// });
+    await productModel.findById(productId);
+
+    sinon.assert.calledWith(executeSpy, 'SELECT * FROM products WHERE id = ?', [productId]);
+
+    executeSpy.restore();
+  });
+});

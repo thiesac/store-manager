@@ -8,12 +8,12 @@ const { productController } = require('../../../src/controllers');
 const { expect } = chai;
 chai.use(sinonChai);
 
-describe('Realizando testes - PRODUCT CONTROLLER', function () {
+describe('Performing tests - PRODUCT CONTROLLER', function () {
   afterEach(function () {
     sinon.restore();
   });
 
-  it('Lista todos os produtos cadastrados com sucesso', async function () {
+  it('List all registered products successfully', async function () {
     sinon.stub(productService, 'findAll').resolves(productsFromServiceSuccessful);
     const req = {};
     const res = {
@@ -27,7 +27,7 @@ describe('Realizando testes - PRODUCT CONTROLLER', function () {
     expect(res.json).to.have.been.calledWith(productsFromModel); 
   });
 
-  it('Recuperando produto por id com sucesso', async function () {
+  it('Retrieve product by id successfully', async function () {
     sinon.stub(productService, 'findById').resolves(productFromServiceSuccessful);
     const req = { params: { id: 1 } };
     const res = {

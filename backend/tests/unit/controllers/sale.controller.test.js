@@ -8,12 +8,12 @@ const { saleController } = require('../../../src/controllers');
 const { expect } = chai;
 chai.use(sinonChai);
 
-describe('Realizando testes - SALE CONTROLLER', function () {
+describe('Performing tests - SALE CONTROLLER', function () {
   afterEach(function () {
     sinon.restore();
   });
 
-  it('Lista todas as vendas realizadas com sucesso', async function () {
+  it('List all successful sales', async function () {
     sinon.stub(saleService, 'findAll').resolves(salesFromServiceSuccessful);
 
     const req = {};
