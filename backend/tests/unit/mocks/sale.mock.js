@@ -1,16 +1,36 @@
+const date = '2023-08-15T13:20:58.000Z';
+
 const salesFromModel = [
   {
-    date: '2023-08-15T13:20:58.000Z',
+    date,
     productId: 1,
     quantity: 5,
   },
   {
-    date: '2023-08-15T13:20:58.000Z',
+    date,
     productId: 2,
     quantity: 10,
   },
   {
-    date: '2023-08-15T13:20:58.000Z',
+    date,
+    productId: 3,
+    quantity: 15,
+  },
+];
+
+const salesFromDB = [
+  {
+    date,
+    productId: 1,
+    quantity: 5,
+  },
+  {
+    date,
+    productId: 2,
+    quantity: 10,
+  },
+  {
+    date,
     productId: 3,
     quantity: 15,
   },
@@ -24,4 +44,5 @@ const salesFromServiceSuccessful = {
 module.exports = {
   salesFromModel,
   salesFromServiceSuccessful,
+  salesFromDB,
 };
