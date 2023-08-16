@@ -41,8 +41,11 @@ const salesFromServiceSuccessful = {
   data: salesFromModel,
 };
 
+const saleFromServiceNotFound = { status: 404, data: { message: 'Sale not found' } };
+
 module.exports = {
   salesFromModel,
   salesFromServiceSuccessful,
   salesFromDB,
+  saleFromServiceNotFound,
 };
