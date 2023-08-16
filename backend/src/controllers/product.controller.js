@@ -11,14 +11,14 @@ const findById = async (req, res) => {
   return res.status(status).json(data);
 };
 
-const insertSale = async (req, res) => {
+const insertProduct = async (req, res) => {
   const { name } = req.body;
-  const { status, data } = await productService.insertSale(name);
+  const { status, data } = await productService.insertProduct(name);
   return res.status(status).json(data);
 };
 
 module.exports = {
   findAll,
   findById,
-  insertSale,
+  insertProduct,
 };

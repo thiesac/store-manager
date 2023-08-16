@@ -33,6 +33,10 @@ const findById = async (saleId) => {
   return camelize(sale);
 };
 
+const insertSale = async () => {
+  
+};
+
 module.exports = {
   findAll,
   findById,

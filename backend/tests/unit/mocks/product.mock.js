@@ -44,6 +44,14 @@ const productFromServiceNotFound = { status: 404, data: { message: 'Product not 
 
 const productIdFromDB = { insertId: 42 };
 
+const productsService = {
+  data: {
+    id: 1,
+    name: 'Martelo de Thor',
+  },
+  status: 200,
+};
+
 module.exports = {
   productsFromModel,
   productsFromDB,
@@ -52,4 +60,5 @@ module.exports = {
   productFromModel,
   productFromServiceNotFound,
   productIdFromDB,
+  productsService,
 };

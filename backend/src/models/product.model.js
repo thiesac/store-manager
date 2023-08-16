@@ -11,7 +11,7 @@ const findById = async (productId) => {
   return camelize(product);
 };
 
-const insertSale = async (name) => {
+const insertProduct = async (name) => {
   const query = `
     INSERT INTO products (name)
     VALUES (?)
@@ -23,5 +23,5 @@ const insertSale = async (name) => {
 module.exports = {
   findAll,
   findById,
-  insertSale,
+  insertProduct,
 };
