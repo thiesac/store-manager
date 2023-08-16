@@ -14,7 +14,13 @@ const findById = async (salesId) => {
   return { status: 200, data: sale };
 };
 
+const insertSale = async (itemsSold) => {
+  const sale = await salesModel.insertSale(itemsSold);
+  return { status: 201, data: sale };
+};
+
 module.exports = {
   findAll,
   findById,
+  insertSale,
 };
