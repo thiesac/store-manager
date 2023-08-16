@@ -36,6 +36,32 @@ const salesFromDB = [
   },
 ];
 
+const saleFromDB = [
+  {
+    date: '2023-08-16T17:26:54.000Z',
+    productId: 1,
+    quantity: 5,
+  },
+  {
+    date: '2023-08-16T17:26:54.000Z',
+    productId: 2,
+    quantity: 10,
+  },
+];
+
+const saleFromModel = [
+  {
+    date: '2023-08-16T17:26:54.000Z',
+    productId: 1,
+    quantity: 5,
+  },
+  {
+    date: '2023-08-16T17:26:54.000Z',
+    productId: 2,
+    quantity: 10,
+  },
+];
+
 const salesFromServiceSuccessful = {
   status: 200,
   data: salesFromModel,
@@ -48,4 +74,6 @@ module.exports = {
   salesFromServiceSuccessful,
   salesFromDB,
   saleFromServiceNotFound,
+  saleFromDB,
+  saleFromModel,
 };
