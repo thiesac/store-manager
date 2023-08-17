@@ -18,12 +18,14 @@ const insertProduct = async (productName) => {
   return { status: 201, data: sale };
 };
 
-const updateProduct = async (productId) => {
-  const findProductById = await this.findById(productId);
+const updateProduct = async (productId, name) => {
+  // console.log(`service productId: ${productId}`)
+  // console.log(`service nome: ${name}`)
+  const findProductById = await findById(productId);
   if (!findProductById) {
     return { status: 404, data: { message: 'Product not found' } };
   }
-  const updatedProduct = await productModel.updateProduct(productId);
+  const updatedProduct = await productModel.updateProduct(productId, name);
   return { status: 200, data: updatedProduct };
 };
 
