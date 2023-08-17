@@ -1,7 +1,9 @@
+const nameThor = 'Martelo de Thor';
+
 const productsFromModel = [
   {
     id: 1,
-    name: 'Martelo de Thor',
+    name: nameThor,
   },
   {
     id: 2,
@@ -16,7 +18,7 @@ const productsFromModel = [
 const productsFromDB = [
   {
     id: 1,
-    name: 'Martelo de Thor',
+    name: nameThor,
   },
   {
     id: 2,
@@ -33,7 +35,9 @@ const productsFromServiceSuccessful = {
   data: productsFromModel,
 };
 
-const productFromModel = { id: 1, name: 'Martelo de Thor' };
+const productFromModel = { id: 1, name: nameThor };
+
+const productFromDB = { id: 1, name: nameThor };
 
 const productFromServiceSuccessful = {
   status: 200,
@@ -47,7 +51,7 @@ const productIdFromDB = { insertId: 42 };
 const productsService = {
   data: {
     id: 1,
-    name: 'Martelo de Thor',
+    name: nameThor,
   },
   status: 200,
 };
@@ -61,4 +65,5 @@ module.exports = {
   productFromServiceNotFound,
   productIdFromDB,
   productsService,
+  productFromDB,
 };
