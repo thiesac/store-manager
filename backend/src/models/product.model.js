@@ -22,8 +22,6 @@ const insertProduct = async (name) => {
 
 const updateProduct = async (productId, name) => {
   const query = 'UPDATE products SET name = ? WHERE id = ?';
-  // console.log(productId)
-  // console.log(dataToUpdate)
   return connection.execute(query, [name, productId]);
 };
 

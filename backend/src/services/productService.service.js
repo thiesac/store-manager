@@ -1,4 +1,5 @@
 const { productModel } = require('../models');
+const { productSchema } = require('./validations/schemas');
 
 const findAll = async () => {
   const products = await productModel.findAll();
@@ -19,14 +20,21 @@ const insertProduct = async (productName) => {
 };
 
 const updateProduct = async (productId, name) => {
-  // console.log(`service productId: ${productId}`)
-  // console.log(`service nome: ${name}`)
   const findProductById = await findById(productId);
-  if (!findProductById) {
+  if (findProductById.status === 404) {
     return { status: 404, data: { message: 'Product not found' } };
   }
-  const updatedProduct = await productModel.updateProduct(productId, name);
-  return { status: 200, data: updatedProduct };
+
+  const validationResult = productSchema.validate({ name });
+  if (validationResult.error) {
+    const errorMessages = validationResult.error.message;
+    const status = errorMessages.includes('required') ? 400 : 422;
+    return { status, data: { message: errorMessages } };
+  }
+
+  await productModel.updateProduct(productId, name);
+
+  return { status: 200, data: { id: productId, name } };
 };
 
 module.exports = {
