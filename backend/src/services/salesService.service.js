@@ -16,13 +16,13 @@ const findById = async (salesId) => {
 };
 
 const validateInsertSale = async (itemsSold) => {
-  const promises = await Promise.all(itemsSold.map(async ({ productId }) => {
-    const product = await productModel.findById(productId);
-    if (product === undefined) {
-      return { status: 404, data: { message: 'Product not found' } };
-    }
-    return product;
-  }));
+  const promises = await Promise.all(
+    itemsSold.map(async ({ productId }) => productModel.findById(productId)),
+  );
+
+  if (promises.some((item) => item === undefined)) {
+    return { status: 404, data: { message: 'Product not found' } };
+  }
   return promises;
 };
 
@@ -33,8 +33,8 @@ const insertSale = async (itemsSold) => {
     return { status: 400, data: { message: errorMessages } };
   }
   const validationId = await validateInsertSale(itemsSold);
-  console.log(validationId);
-  if (validationId[0].status === 404) {
+
+  if (validationId.status === 404) {
     return { status: 404, data: { message: 'Product not found' } };
   }
   const sale = await salesModel.insertSale(itemsSold);
@@ -45,4 +45,5 @@ const insertSale = async (itemsSold) => {
     findAll,
     findById,
     insertSale,
+    validateInsertSale,
   };
