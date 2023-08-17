@@ -16,4 +16,4 @@ const salesSchema = Joi.array().items(
 
 module.exports = {
   salesSchema,
-};      
+};
