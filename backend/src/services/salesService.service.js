@@ -28,9 +28,11 @@ const validateInsertSale = async (itemsSold) => {
 
 const insertSale = async (itemsSold) => {
   const validationResult = salesSchema.validate(itemsSold);
+
   if (validationResult.error) {
-    const errorMessages = validationResult.error.details.map((detail) => detail.message);
-    return { status: 400, data: { message: errorMessages } };
+    const errorMessages = validationResult.error.details[0].message;
+    const status = errorMessages.includes('required') ? 400 : 422;
+    return { status, data: { message: errorMessages } };
   }
   const validationId = await validateInsertSale(itemsSold);
 
