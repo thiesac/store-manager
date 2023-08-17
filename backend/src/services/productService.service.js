@@ -32,9 +32,9 @@ const updateProduct = async (productId, name) => {
     return { status, data: { message: errorMessages } };
   }
 
-  await productModel.updateProduct(Number(productId), name);
+  await productModel.updateProduct(productId, name);
 
-  return { status: 200, data: { id: productId, name } };
+  return { status: 200, data: { id: Number(productId), name } };
 };
 
 module.exports = {
