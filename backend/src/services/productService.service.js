@@ -32,7 +32,7 @@ const updateProduct = async (productId, name) => {
     return { status, data: { message: errorMessages } };
   }
 
-  await productModel.updateProduct(productId, name);
+  await productModel.updateProduct(Number(productId), name);
 
   return { status: 200, data: { id: productId, name } };
 };
