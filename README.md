@@ -75,3 +75,11 @@ To get started with this project:
 5. Access the API via the provided endpoints as described above.
 
 Remember to set up your environment, define environment variables, and adjust database configurations as needed. Enjoy coding! 😊
+
+## Contributing
+
+Contributions to this project are welcome! If you have bug fixes, feature additions, or improvements, please feel free to open an issue or submit a pull request.
+
+## Acknowledgments
+
+I would like to acknowledge and express my gratitude to [Trybe](https://www.betrybe.com/) for their support and guidance throughout the development of this educational resource.
