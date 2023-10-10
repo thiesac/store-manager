@@ -61,7 +61,7 @@ Feedback and Acknowledgment
 We value your feedback! If you have any comments, suggestions, or feedback regarding this project, please feel free to reach out. Your input is essential for our ongoing improvement.
 
 Acknowledgment
-This project was completed as part of the coursework at @[betrybe], an educational platform that prepares students for careers in technology. We acknowledge the support and guidance provided by the Trybe team and colleagues during the development of this project.
+This project was completed as part of the coursework at @betrybe, an educational platform that prepares students for careers in technology. We acknowledge the support and guidance provided by the Trybe team and colleagues during the development of this project.
 
 
 ### Getting Started
